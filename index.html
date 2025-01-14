@@ -3,275 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anay Baid - Portfolio</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anay Baid - The Most Detailed Technical Résumé</title>
+
+    <!-- External Links for Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
-        /* General Reset */
+        /* Reset and Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f1f1f1;
             color: #333;
             line-height: 1.6;
         }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
+        /* Header */
         header {
-            background-color: #232f3e;
+            background-color: #333;
             color: #fff;
-            padding: 10px 0;
+            padding: 40px 20px;
             text-align: center;
         }
-
         header h1 {
-            font-size: 2rem;
+            font-size: 60px;
+            font-weight: 700;
+        }
+        header p {
+            font-size: 18px;
         }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #3b4a60;
-            padding: 1rem 0;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        nav a:hover {
-            color: #ff6f61;
-        }
-
+        /* Main Container */
         .container {
-            width: 80%;
-            margin: 30px auto;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
         }
 
-        .section {
+        /* Section Titles */
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+            text-transform: uppercase;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+        }
+
+        /* Skills Section with Chart */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
             margin-bottom: 40px;
         }
-
-        .section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #232f3e;
-        }
-
-        .experience-item {
-            background-color: #fff;
+        .skills .chart {
+            background: #fff;
             padding: 20px;
             border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .experience-item h3 {
-            font-size: 1.5rem;
-            color: #3b4a60;
+        /* Accordion for Projects and Experience */
+        .accordion-item {
+            margin-bottom: 10px;
         }
-
-        .experience-item p {
-            font-size: 1rem;
-            margin-top: 10px;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .skills-list li {
-            background-color: #ff6f61;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            margin: 5px;
-            font-size: 0.9rem;
-        }
-
-        .skills-list li:hover {
-            background-color: #e85a47;
-        }
-
-        footer {
-            background-color: #232f3e;
-            color: #fff;
+        .accordion-header {
+            background-color: #4CAF50;
             padding: 15px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .accordion-header:hover {
+            background-color: #45a049;
+        }
+        .accordion-body {
+            display: none;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 80%;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
             text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
         }
 
         footer a {
-            color: #ff6f61;
-            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 40px;
+            }
+            .container {
+                padding: 20px;
+            }
         }
 
-        .project-link {
-            display: block;
-            color: #ff6f61;
-            margin-top: 5px;
+        /* Animations */
+        .animate__animated {
+            animation-duration: 1s;
+            animation-delay: 0.5s;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Anay Baid - Portfolio</h1>
-    </header>
-    <nav>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
 
-    <div class="container">
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <h2>Professional Experience</h2>
+<header>
+    <h1>Anay Baid</h1>
+    <p>Software Engineer | Data Scientist | Tech Enthusiast</p>
+</header>
 
-            <div class="experience-item">
-                <h3>Data Analyst & Service Desk Intern</h3>
-                <p><strong>Nationwide Appraisal Services</strong> | <em>September 2024 - December 2024</em></p>
+<div class="container">
+
+    <!-- Technical Skills -->
+    <section class="skills">
+        <h2>💻 Technical Skills & Expertise</h2>
+
+        <div class="chart">
+            <h3>Languages & Frameworks</h3>
+            <canvas id="languagesChart"></canvas>
+        </div>
+
+        <div class="chart">
+            <h3>Tools & Technologies</h3>
+            <canvas id="toolsChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Professional Experience (Accordion) -->
+    <section>
+        <h2>🚀 Professional Experience</h2>
+        <div class="accordion-item">
+            <div class="accordion-header">Data Engineering Intern - Cineplex Entertainment LP</div>
+            <div class="accordion-body">
                 <ul>
-                    <li>Administered Windows 10/11, AWS S3, Azure, & Intune MDM for optimized device & cloud management.</li>
-                    <li>Resolved Tier 1/2 tickets via Jira & Confluence, ensuring long-term system stability through efficient RCA.</li>
-                    <li>Optimized network infrastructure (LAN/Wi-Fi) leveraging Docker, VMWare, and TCP protocols.</li>
-                    <li>Managed database operations using SQL Workbench, SonicWALL, Putty, and WinSCP for secure SSH and file transfers.</li>
-                    <li>Supported mobile app testing on Android Emulators, integrated Java 8 JDK for development & debugging.</li>
+                    <li>Developed custom data cube connections for Power BI reports.</li>
+                    <li>Optimized ML algorithms improving performance by 15%.</li>
+                    <li>Validated 10TB of data, ensuring 100% integrity.</li>
                 </ul>
             </div>
-
-            <div class="experience-item">
-                <h3>Data Engineering Intern</h3>
-                <p><strong>Cineplex Entertainment LP</strong> | <em>January 2024 - April 2024</em></p>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">Software Administration Intern - Alterra Mountain Company</div>
+            <div class="accordion-body">
                 <ul>
-                    <li>Spearheaded development of custom data cube connections for Power BI, optimizing data insights on the homepage dashboard.</li>
-                    <li>Enhanced Box Office records display via comprehensive data incident validation & tracking.</li>
-                    <li>Optimized show-time ML algorithm by 15%, improving predictions and data accuracy.</li>
-                    <li>Implemented SQL schema compare tools and Git-based version control using Python scripting for data governance.</li>
-                    <li>Validated 10TB Azure data, ensuring 100% integrity and improving automated reporting by 70% in terms of time efficiency.</li>
+                    <li>Optimized property management systems to increase performance by 20%.</li>
+                    <li>Improved revenue reports using Power BI.</li>
                 </ul>
             </div>
+        </div>
+    </section>
 
-            <div class="experience-item">
-                <h3>Software Administration Intern</h3>
-                <p><strong>Alterra Mountain Company</strong> | <em>June 2023 - September 2023</em></p>
+    <!-- Projects Section (Modal Popup) -->
+    <section>
+        <h2>🌟 Projects & Hackathons</h2>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="openModal('mernProject')">MERN Store Gold - E-commerce Platform</div>
+            <div class="accordion-body">
                 <ul>
-                    <li>Developed property management system based on Cenium 9, improving guest record indexing by 20%.</li>
-                    <li>Utilized Power BI for monthly reports, driving a 15% revenue increase through insights.</li>
+                    <li>Developed a full-stack MERN e-commerce platform with secure payment systems.</li>
+                    <li>Deployed using Docker, improving scalability.</li>
                 </ul>
             </div>
+        </div>
+    </section>
 
-            <div class="experience-item">
-                <h3>Android Developer Intern</h3>
-                <p><strong>Nytia Health</strong> | <em>May 2023 - June 2023</em></p>
-                <ul>
-                    <li>Integrated TensorFlow & Scikit-learn into Android watches, improving data processing efficiency by 20%.</li>
-                    <li>Developed real-time data visualization dashboards with Tableau, improving decision-making processes by 30%.</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h3>Software Developer Intern</h3>
-                <p><strong>VeDA Corporation</strong> | <em>May 2022 - August 2022</em></p>
-                <ul>
-                    <li>Reduced manual testing by 40% using Selenium-based scripts, streamlining content maintenance.</li>
-                    <li>Integrated Splunk and Docker for infrastructure monitoring, reducing downtime by 55% and increasing user capacity by 10%.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="section">
-            <h2>Education</h2>
-            <p><strong>University of Waterloo</strong> | <em>Honours Computer Science (September 2022 - Present)</em></p>
+    <!-- Modal Popup -->
+    <div id="mernProject" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('mernProject')">&times;</span>
+            <h3>MERN Store Gold - E-commerce Platform</h3>
+            <p>This project was developed using the MERN stack. It includes features like:</p>
             <ul>
-                <li>Organized Tech+UW Mentorship Program for 150+ participants and led DEI community events.</li>
-                <li>Provided tutoring support for CS 136/136L (Algorithm Design in C), addressing technical queries and leading tutoring sessions.</li>
+                <li>Redux for state management</li>
+                <li>Dockerized environment for seamless deployments</li>
+                <li>Integration of secure payment gateways</li>
             </ul>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <h2>Technical Skills</h2>
-            <h3>Languages</h3>
-            <ul class="skills-list">
-                <li>C</li>
-                <li>C++</li>
-                <li>Python</li>
-                <li>JavaScript</li>
-                <li>Java</li>
-                <li>R</li>
-                <li>SQL</li>
-                <li>Kotlin</li>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>React</li>
-                <li>.NET</li>
-                <li>TypeScript</li>
-                <li>C#</li>
-            </ul>
-
-            <h3>Frameworks & Libraries</h3>
-            <ul class="skills-list">
-                <li>Django</li>
-                <li>Spring Boot</li>
-                <li>Node.js</li>
-                <li>Flutter</li>
-                <li>Tailwind CSS</li>
-                <li>Agile</li>
-                <li>Jira</li>
-                <li>Docker</li>
-                <li>JUnit</li>
-            </ul>
-
-            <h3>Developer Tools</h3>
-            <ul class="skills-list">
-                <li>MS Power BI</li>
-                <li>MS Office Suite</li>
-                <li>MS Azure</li>
-                <li>Git</li>
-                <li>Linux</li>
-                <li>Gitlab</li>
-                <li>MongoDB</li>
-                <li>AWS Cloud</li>
-            </ul>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <h2>Projects</h2>
-            <p><strong>Full-Stack Development — MERN Store Gold (E-commerce Site)</strong></p>
-            <ul>
-                <li>Utilized Redux Thunk for state management, optimizing deployment with Docker Compose and Vercel.</li>
-                <li>Improved development speed and reliability by 30% through efficient Docker and Vercel deployment strategies.</li>
-            </ul>
-            <a class="project-link" href="https://github.com/your-repo/mern-store" target="_blank">View Project on GitHub</a>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:anay.baid@uwaterloo.ca">anay.baid@uwaterloo.ca</a></p>
-            <p>Phone: <a href="tel:+12268998462">+1 226 899 8462</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/anaybaid" target="_blank">linkedin.com/in/anaybaid</a></p>
-            <p>Website: <a href="https://anay-baid-web.netlify.app" target="_blank">anay-baid-web.netlify.app</a></p>
-        </section>
+        </div>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Anay Baid. All rights reserved.</p>
-    </footer>
+</div>
+
+<footer>
+    <p>&copy; 2025 Anay Baid. All rights reserved. For more details, visit <a href="https://anay-baid-web.netlify.app">Portfolio</a>.</p>
+</footer>
+
+<!-- JavaScript for Interactive Elements -->
+<script>
+    // Interactive Modal
+    function openModal(id) {
+        document.getElementById(id).style.display = "flex";
+    }
+    function closeModal(id) {
+        document.getElementById(id).style.display = "none";
+    }
+
+    // Accordion Effect
+    const accHeaders = document.querySelectorAll('.accordion-header');
+    accHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const body = header.nextElementSibling;
+            body.style.display = (body.style.display === 'block') ? 'none' : 'block';
+        });
+    });
+
+    // Charts
+    const languagesData = {
+        labels: ['C', 'C++', 'Python', 'JavaScript', 'Java', 'SQL'],
+        datasets: [{
+            label: 'Proficiency (%)',
+            data: [90, 80, 85, 95, 70, 88],
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }]
+    };
+
+    const toolsData = {
+        labels: ['Git', 'Docker', 'AWS', 'Azure', 'PostgreSQL'],
+        datasets: [{
+            label: 'Proficiency (%)',
+            data: [95, 80, 85, 75, 90],
+            backgroundColor: 'rgba(153, 102, 255, 0.2)',
+            borderColor: 'rgba(153, 102, 255, 1)',
+            borderWidth: 1
+        }]
+    };
+
+    const ctxLang = document.getElementById('languagesChart').getContext('2d');
+    const ctxTools = document.getElementById('toolsChart').getContext('2d');
+
+    new Chart(ctxLang, {
+        type: 'bar',
+        data: languagesData,
+        options: { responsive: true, scales: { y: { beginAtZero: true } } }
+    });
+
+    new Chart(ctxTools, {
+        type: 'bar',
+        data: toolsData,
+        options: { responsive: true, scales: { y: { beginAtZero: true } } }
+    });
+</script>
+
 </body>
 </html>
