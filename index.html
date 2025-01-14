@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anay Baid | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anay Baid - Portfolio</title>
     <style>
         /* General Reset */
         * {
@@ -14,317 +13,265 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f9f9f9;
-            color: #444;
-        }
-
-        /* Hero Section */
-        .hero {
-            background-color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-            font-weight: 600;
-        }
-
-        .nav-links li a {
-            text-decoration: none;
-            color: #444;
-            font-size: 1.1em;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links li a:hover {
-            color: #007BFF;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5em;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
             color: #333;
-            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
-        .hero-content p {
-            font-size: 1.3em;
-            color: #777;
-            margin-bottom: 30px;
+        header {
+            background-color: #232f3e;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
         }
 
-        .cta-button {
-            padding: 12px 35px;
-            background-color: #007BFF;
-            color: white;
-            font-size: 1.1em;
-            border-radius: 5px;
-            text-transform: uppercase;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+        header h1 {
+            font-size: 2rem;
         }
 
-        .cta-button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Socials */
-        .socials {
-            margin-top: 40px;
+        nav {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            background-color: #3b4a60;
+            padding: 1rem 0;
         }
 
-        .socials a {
-            font-size: 1.8em;
-            color: #333;
-            transition: color 0.3s ease;
-        }
-
-        .socials a:hover {
-            color: #007BFF;
-        }
-
-        /* About Me Section */
-        .about {
-            background-color: #fff;
-            padding: 80px 20px;
-            text-align: center;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .about-content h2 {
-            font-size: 2.5em;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .about-content p {
-            font-size: 1.1em;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .headshot-container {
-            margin-top: 30px;
-        }
-
-        .headshot {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #ddd;
-        }
-
-        /* Projects Section */
-        .projects {
-            background-color: #fff;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .projects h2 {
-            font-size: 2.5em;
-            color: #333;
-            margin-bottom: 40px;
-        }
-
-        .project-cards {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card img {
-            width: 100%;
-            height: auto;
-        }
-
-        .project-info {
-            padding: 20px;
-        }
-
-        .project-info h3 {
-            font-size: 1.6em;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .project-info p {
-            color: #555;
-            font-size: 1.1em;
-            margin-bottom: 15px;
-        }
-
-        .project-info a {
-            font-size: 1.1em;
-            color: #007BFF;
-            transition: color 0.3s ease;
-        }
-
-        .project-info a:hover {
-            color: #0056b3;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        /* Footer Section */
-        .contact {
-            background-color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .contact h2 {
-            font-size: 2.5em;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .contact p {
-            font-size: 1.2em;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .contact a {
-            color: #007BFF;
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
             font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #ff6f61;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #232f3e;
+        }
+
+        .experience-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-item h3 {
+            font-size: 1.5rem;
+            color: #3b4a60;
+        }
+
+        .experience-item p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .skills-list li {
+            background-color: #ff6f61;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+
+        .skills-list li:hover {
+            background-color: #e85a47;
+        }
+
+        footer {
+            background-color: #232f3e;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ff6f61;
             text-decoration: none;
         }
 
-        .contact a:hover {
-            color: #0056b3;
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .project-link {
+            display: block;
+            color: #ff6f61;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <header class="nav-container">
-            <img class="logo" src="src/images/ab2.jpg" alt="Anay Baid's logo" />
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#about-me">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact-me">Contact</a></li>
+    <header>
+        <h1>Anay Baid - Portfolio</h1>
+    </header>
+    <nav>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <h3>Data Analyst & Service Desk Intern</h3>
+                <p><strong>Nationwide Appraisal Services</strong> | <em>September 2024 - December 2024</em></p>
+                <ul>
+                    <li>Administered Windows 10/11, AWS S3, Azure, & Intune MDM for optimized device & cloud management.</li>
+                    <li>Resolved Tier 1/2 tickets via Jira & Confluence, ensuring long-term system stability through efficient RCA.</li>
+                    <li>Optimized network infrastructure (LAN/Wi-Fi) leveraging Docker, VMWare, and TCP protocols.</li>
+                    <li>Managed database operations using SQL Workbench, SonicWALL, Putty, and WinSCP for secure SSH and file transfers.</li>
+                    <li>Supported mobile app testing on Android Emulators, integrated Java 8 JDK for development & debugging.</li>
                 </ul>
-            </nav>
-        </header>
-        
-        <div class="hero-content">
-            <h1>Anay Baid</h1>
-            <p>Passionate Software Developer | Learner & Creator</p>
-            <a href="#about-me" class="cta-button">Explore More</a>
-        </div>
-        
-        <div class="socials">
-            <a href="https://www.instagram.com/iamanaybaid/" target="_blank" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://github.com/anaybaid7" target="_blank" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/anay-baid-6768901a7/" target="_blank" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
-    </section>
+            </div>
 
-    <!-- About Me Section -->
-    <section id="about-me" class="about">
-        <div class="about-content">
-            <h2>About Me</h2>
-            <p>Hi, I'm Anay! A Computer Science student at the University of Waterloo, passionate about coding, learning new technologies, and creating solutions that matter. I specialize in web development, data engineering, and software development, always striving for excellence in every project I undertake.</p>
-            <div class="headshot-container">
-                <img class="headshot" src="src/images/ab3.jpg" alt="Anay Baid's headshot" />
+            <div class="experience-item">
+                <h3>Data Engineering Intern</h3>
+                <p><strong>Cineplex Entertainment LP</strong> | <em>January 2024 - April 2024</em></p>
+                <ul>
+                    <li>Spearheaded development of custom data cube connections for Power BI, optimizing data insights on the homepage dashboard.</li>
+                    <li>Enhanced Box Office records display via comprehensive data incident validation & tracking.</li>
+                    <li>Optimized show-time ML algorithm by 15%, improving predictions and data accuracy.</li>
+                    <li>Implemented SQL schema compare tools and Git-based version control using Python scripting for data governance.</li>
+                    <li>Validated 10TB Azure data, ensuring 100% integrity and improving automated reporting by 70% in terms of time efficiency.</li>
+                </ul>
             </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>Featured Projects</h2>
-        <div class="project-cards">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <img src="src/images/coursera-releases-machine-learning-course.jpg" alt="Professional Skills" />
-                <div class="project-info">
-                    <h3>Professional Skills & CV</h3>
-                    <p>Explore my experience and skills gained through certifications and hands-on projects.</p>
-                    <a href="https://www.linkedin.com/in/anaybaid/" target="_blank">View here</a>
-                </div>
+            <div class="experience-item">
+                <h3>Software Administration Intern</h3>
+                <p><strong>Alterra Mountain Company</strong> | <em>June 2023 - September 2023</em></p>
+                <ul>
+                    <li>Developed property management system based on Cenium 9, improving guest record indexing by 20%.</li>
+                    <li>Utilized Power BI for monthly reports, driving a 15% revenue increase through insights.</li>
+                </ul>
             </div>
-            
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="src/images/kaggle.jpg" alt="Movies Analysis" />
-                <div class="project-info">
-                    <h3>Movies Analysis (Kaggle)</h3>
-                    <p>A data-driven project focused on analyzing movies data to help businesses make informed decisions.</p>
-                    <a href="https://github.com/anaybaid7/Movies-Analysis-TMBd" target="_blank">View here</a>
-                </div>
-            </div>
-            
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="src/images/chat.png" alt="Chatbot" />
-                <div class="project-info">
-                    <h3>Automated ChatBot (Java)</h3>
-                    <p>A Java-based chatbot with automated login and messaging features.</p>
-                    <a href="https://github.com/anaybaid7/ChatInterface-Java" target="_blank">View here</a>
-                </div>
-            </div>
-            
-            <!-- Project 4 -->
-            <div class="project-card">
-                <img src="src/images/mayur.png" alt="Search Engine" />
-                <div class="project-info">
-                    <h3>Simple Search Engine (Python)</h3>
-                    <p>A Python-based project simulating search engine functionality using algorithmic approaches.</p>
-                    <a href="https://github.com/anaybaid7/algorithmic-search-python" target="_blank">View here</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <footer id="contact-me" class="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out if you'd like to collaborate or have any questions!</p>
-        <p>Email: anay.baid@uwaterloo.ca</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/anay-baid-6768901a7/" target="_blank">Click here</a></p>
+            <div class="experience-item">
+                <h3>Android Developer Intern</h3>
+                <p><strong>Nytia Health</strong> | <em>May 2023 - June 2023</em></p>
+                <ul>
+                    <li>Integrated TensorFlow & Scikit-learn into Android watches, improving data processing efficiency by 20%.</li>
+                    <li>Developed real-time data visualization dashboards with Tableau, improving decision-making processes by 30%.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Software Developer Intern</h3>
+                <p><strong>VeDA Corporation</strong> | <em>May 2022 - August 2022</em></p>
+                <ul>
+                    <li>Reduced manual testing by 40% using Selenium-based scripts, streamlining content maintenance.</li>
+                    <li>Integrated Splunk and Docker for infrastructure monitoring, reducing downtime by 55% and increasing user capacity by 10%.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <p><strong>University of Waterloo</strong> | <em>Honours Computer Science (September 2022 - Present)</em></p>
+            <ul>
+                <li>Organized Tech+UW Mentorship Program for 150+ participants and led DEI community events.</li>
+                <li>Provided tutoring support for CS 136/136L (Algorithm Design in C), addressing technical queries and leading tutoring sessions.</li>
+            </ul>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2>Technical Skills</h2>
+            <h3>Languages</h3>
+            <ul class="skills-list">
+                <li>C</li>
+                <li>C++</li>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>R</li>
+                <li>SQL</li>
+                <li>Kotlin</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>React</li>
+                <li>.NET</li>
+                <li>TypeScript</li>
+                <li>C#</li>
+            </ul>
+
+            <h3>Frameworks & Libraries</h3>
+            <ul class="skills-list">
+                <li>Django</li>
+                <li>Spring Boot</li>
+                <li>Node.js</li>
+                <li>Flutter</li>
+                <li>Tailwind CSS</li>
+                <li>Agile</li>
+                <li>Jira</li>
+                <li>Docker</li>
+                <li>JUnit</li>
+            </ul>
+
+            <h3>Developer Tools</h3>
+            <ul class="skills-list">
+                <li>MS Power BI</li>
+                <li>MS Office Suite</li>
+                <li>MS Azure</li>
+                <li>Git</li>
+                <li>Linux</li>
+                <li>Gitlab</li>
+                <li>MongoDB</li>
+                <li>AWS Cloud</li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <p><strong>Full-Stack Development — MERN Store Gold (E-commerce Site)</strong></p>
+            <ul>
+                <li>Utilized Redux Thunk for state management, optimizing deployment with Docker Compose and Vercel.</li>
+                <li>Improved development speed and reliability by 30% through efficient Docker and Vercel deployment strategies.</li>
+            </ul>
+            <a class="project-link" href="https://github.com/your-repo/mern-store" target="_blank">View Project on GitHub</a>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:anay.baid@uwaterloo.ca">anay.baid@uwaterloo.ca</a></p>
+            <p>Phone: <a href="tel:+12268998462">+1 226 899 8462</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/anaybaid" target="_blank">linkedin.com/in/anaybaid</a></p>
+            <p>Website: <a href="https://anay-baid-web.netlify.app" target="_blank">anay-baid-web.netlify.app</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Anay Baid. All rights reserved.</p>
     </footer>
 </body>
 </html>
