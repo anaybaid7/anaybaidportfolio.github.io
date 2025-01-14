@@ -1,190 +1,330 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anay Baid | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #444;
+        }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+        /* Hero Section */
+        .hero {
+            background-color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
 
-/* Hero Section */
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 80px;
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            font-weight: 600;
+        }
 
-nav .logo {
-  width: 120px;
-  margin-right: 20px;
-}
+        .nav-links li a {
+            text-decoration: none;
+            color: #444;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
 
-#nav-list {
-  display: flex;
-  gap: 20px;
-  font-weight: 600;
-}
+        .nav-links li a:hover {
+            color: #007BFF;
+        }
 
-#nav-list a {
-  color: #333;
-  font-size: 1.1em;
-  transition: color 0.3s ease;
-}
+        .hero-content h1 {
+            font-size: 3.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
 
-#nav-list a:hover {
-  color: #007BFF;
-}
+        .hero-content p {
+            font-size: 1.3em;
+            color: #777;
+            margin-bottom: 30px;
+        }
 
-.hero-area {
-  text-align: left;
-}
+        .cta-button {
+            padding: 12px 35px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 1.1em;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
 
-.hero-text h1 {
-  font-size: 3em;
-  color: #333;
-}
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
 
-.hero-text p {
-  font-size: 1.2em;
-  color: #777;
-}
+        /* Socials */
+        .socials {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
 
-.cta-button {
-  padding: 10px 30px;
-  background-color: #007BFF;
-  color: #fff;
-  font-size: 1.1em;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
+        .socials a {
+            font-size: 1.8em;
+            color: #333;
+            transition: color 0.3s ease;
+        }
 
-.cta-button:hover {
-  background-color: #0056b3;
-}
+        .socials a:hover {
+            color: #007BFF;
+        }
 
-/* Social Links */
-.socials {
-  display: flex;
-  gap: 15px;
-}
+        /* About Me Section */
+        .about {
+            background-color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+        }
 
-.social {
-  font-size: 2em;
-  color: #333;
-  transition: color 0.3s ease;
-}
+        .about-content h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
 
-.social:hover {
-  color: #007BFF;
-}
+        .about-content p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-/* About Me Section */
-.sub-section {
-  background-color: #fff;
-  padding: 60px 80px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+        .headshot-container {
+            margin-top: 30px;
+        }
 
-.sub-section h2 {
-  font-size: 2.5em;
-  color: #333;
-}
+        .headshot {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ddd;
+        }
 
-.information p {
-  margin-top: 10px;
-  color: #555;
-}
+        /* Projects Section */
+        .projects {
+            background-color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
 
-.headshot-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+        .projects h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 40px;
+        }
 
-.headshot {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #ddd;
-  margin-top: 20px;
-}
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-/* Project Section */
-.project-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-top: 30px;
-}
+        .project-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
 
-.project-card {
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-}
+        .project-card img {
+            width: 100%;
+            height: auto;
+        }
 
-.project-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
+        .project-info {
+            padding: 20px;
+        }
 
-.project-card h3 {
-  margin-top: 15px;
-  color: #333;
-}
+        .project-info h3 {
+            font-size: 1.6em;
+            color: #333;
+            margin-bottom: 10px;
+        }
 
-.project-card .subtext {
-  color: #777;
-  margin-top: 10px;
-}
+        .project-info p {
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
 
-.project-card .project-link {
-  font-size: 1.1em;
-  color: #007BFF;
-  transition: color 0.3s ease;
-}
+        .project-info a {
+            font-size: 1.1em;
+            color: #007BFF;
+            transition: color 0.3s ease;
+        }
 
-.project-card .project-link:hover {
-  color: #0056b3;
-}
+        .project-info a:hover {
+            color: #0056b3;
+        }
 
-/* Footer */
-footer {
-  background-color: #fff;
-  padding: 40px 80px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
 
-footer h2 {
-  font-size: 2em;
-  color: #333;
-}
+        /* Footer Section */
+        .contact {
+            background-color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+        }
 
-footer p {
-  margin-top: 10px;
-  color: #555;
-}
+        .contact h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .contact a {
+            color: #007BFF;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <header class="nav-container">
+            <img class="logo" src="src/images/ab2.jpg" alt="Anay Baid's logo" />
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about-me">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact-me">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="hero-content">
+            <h1>Anay Baid</h1>
+            <p>Passionate Software Developer | Learner & Creator</p>
+            <a href="#about-me" class="cta-button">Explore More</a>
+        </div>
+        
+        <div class="socials">
+            <a href="https://www.instagram.com/iamanaybaid/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com/anaybaid7" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/anay-baid-6768901a7/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about-me" class="about">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>Hi, I'm Anay! A Computer Science student at the University of Waterloo, passionate about coding, learning new technologies, and creating solutions that matter. I specialize in web development, data engineering, and software development, always striving for excellence in every project I undertake.</p>
+            <div class="headshot-container">
+                <img class="headshot" src="src/images/ab3.jpg" alt="Anay Baid's headshot" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-cards">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="src/images/coursera-releases-machine-learning-course.jpg" alt="Professional Skills" />
+                <div class="project-info">
+                    <h3>Professional Skills & CV</h3>
+                    <p>Explore my experience and skills gained through certifications and hands-on projects.</p>
+                    <a href="https://www.linkedin.com/in/anaybaid/" target="_blank">View here</a>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="src/images/kaggle.jpg" alt="Movies Analysis" />
+                <div class="project-info">
+                    <h3>Movies Analysis (Kaggle)</h3>
+                    <p>A data-driven project focused on analyzing movies data to help businesses make informed decisions.</p>
+                    <a href="https://github.com/anaybaid7/Movies-Analysis-TMBd" target="_blank">View here</a>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="src/images/chat.png" alt="Chatbot" />
+                <div class="project-info">
+                    <h3>Automated ChatBot (Java)</h3>
+                    <p>A Java-based chatbot with automated login and messaging features.</p>
+                    <a href="https://github.com/anaybaid7/ChatInterface-Java" target="_blank">View here</a>
+                </div>
+            </div>
+            
+            <!-- Project 4 -->
+            <div class="project-card">
+                <img src="src/images/mayur.png" alt="Search Engine" />
+                <div class="project-info">
+                    <h3>Simple Search Engine (Python)</h3>
+                    <p>A Python-based project simulating search engine functionality using algorithmic approaches.</p>
+                    <a href="https://github.com/anaybaid7/algorithmic-search-python" target="_blank">View here</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact-me" class="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out if you'd like to collaborate or have any questions!</p>
+        <p>Email: anay.baid@uwaterloo.ca</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/anay-baid-6768901a7/" target="_blank">Click here</a></p>
+    </footer>
+</body>
+</html>
