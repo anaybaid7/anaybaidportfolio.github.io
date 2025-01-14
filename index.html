@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anay Baid - Portfolio</title>
+    <title>Anay Baid - Full Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* General Reset */
         * {
@@ -13,25 +14,27 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
         }
 
         header {
-            background-color: #232f3e;
+            background: linear-gradient(45deg, #232f3e, #ff6f61);
             color: #fff;
-            padding: 20px 0;
+            padding: 50px 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 700;
         }
 
         nav {
@@ -39,15 +42,19 @@
             justify-content: center;
             background-color: #3b4a60;
             padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
+            font-size: 1.1rem;
             margin: 0 25px;
+            text-transform: uppercase;
             font-weight: bold;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         nav a:hover {
@@ -55,9 +62,22 @@
             transform: scale(1.1);
         }
 
+        /* Active Nav Indicator */
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            width: 50%;
+            height: 2px;
+            background-color: #ff6f61;
+            transform: translateX(-50%);
+        }
+
         .container {
-            width: 85%;
+            max-width: 1200px;
             margin: 30px auto;
+            padding: 0 20px;
             overflow: hidden;
         }
 
@@ -66,7 +86,7 @@
         }
 
         .section h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: #232f3e;
             text-transform: uppercase;
@@ -100,25 +120,31 @@
             color: #555;
         }
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .skills-list li {
+        .collapsible {
             background-color: #ff6f61;
             color: white;
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
         }
 
-        .skills-list li:hover {
+        .collapsible:hover {
             background-color: #e85a47;
-            transform: scale(1.05);
+        }
+
+        .collapsible-content {
+            display: none;
+            background-color: #f4f4f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
         }
 
         footer {
@@ -126,6 +152,7 @@
             color: #fff;
             padding: 25px;
             text-align: center;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
         }
 
         footer a {
@@ -139,36 +166,71 @@
             transform: scale(1.1);
         }
 
+        /* Skills List */
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skills-list li {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-align: center;
+        }
+
+        .skills-list li:hover {
+            background-color: #e85a47;
+            transform: scale(1.05);
+        }
+
         .project-link {
-            display: block;
             color: #ff6f61;
-            margin-top: 15px;
-            text-decoration: none;
             font-weight: bold;
+            text-decoration: none;
             font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
 
         .project-link:hover {
-            text-decoration: underline;
+            color: #e85a47;
         }
+
+        /* Scroll Animation */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Anay Baid - Portfolio</h1>
+        <h1>Anay Baid - Full Portfolio</h1>
     </header>
 
     <nav>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
     <div class="container">
         <!-- Experience Section -->
-        <section id="experience" class="section">
+        <section id="experience" class="section animate-on-scroll">
             <h2>Professional Experience</h2>
 
             <div class="experience-item">
@@ -194,37 +256,10 @@
                     <li>Validated 10TB Azure data, ensuring 100% integrity and improving automated reporting by 70% in terms of time efficiency.</li>
                 </ul>
             </div>
-
-            <div class="experience-item">
-                <h3>Software Administration Intern</h3>
-                <p><strong>Alterra Mountain Company</strong> | <em>June 2023 - September 2023</em></p>
-                <ul>
-                    <li>Developed property management system based on Cenium 9, improving guest record indexing by 20%.</li>
-                    <li>Utilized Power BI for monthly reports, driving a 15% revenue increase through insights.</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h3>Android Developer Intern</h3>
-                <p><strong>Nytia Health</strong> | <em>May 2023 - June 2023</em></p>
-                <ul>
-                    <li>Integrated TensorFlow & Scikit-learn into Android watches, improving data processing efficiency by 20%.</li>
-                    <li>Developed real-time data visualization dashboards with Tableau, improving decision-making processes by 30%.</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h3>Software Developer Intern</h3>
-                <p><strong>VeDA Corporation</strong> | <em>May 2022 - August 2022</em></p>
-                <ul>
-                    <li>Reduced manual testing by 40% using Selenium-based scripts, streamlining content maintenance.</li>
-                    <li>Integrated Splunk and Docker for infrastructure monitoring, reducing downtime by 55% and increasing user capacity by 10%.</li>
-                </ul>
-            </div>
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="section">
+        <section id="education" class="section animate-on-scroll">
             <h2>Education</h2>
             <p><strong>University of Waterloo</strong> | <em>Honours Computer Science (September 2022 - Present)</em></p>
             <ul>
@@ -234,8 +269,9 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="section">
+        <section id="skills" class="section animate-on-scroll">
             <h2>Technical Skills</h2>
+
             <h3>Languages</h3>
             <ul class="skills-list">
                 <li>C</li>
@@ -250,59 +286,76 @@
                 <li>CSS3</li>
                 <li>React</li>
                 <li>.NET</li>
-                <li>TypeScript</li>
-                <li>C#</li>
             </ul>
 
-            <h3>Frameworks & Libraries</h3>
+            <h3>Tools & Technologies</h3>
             <ul class="skills-list">
-                <li>Django</li>
-                <li>Spring Boot</li>
-                <li>Node.js</li>
-                <li>Flutter</li>
-                <li>Tailwind CSS</li>
-                <li>Agile</li>
-                <li>Jira</li>
                 <li>Docker</li>
-                <li>JUnit</li>
-            </ul>
-
-            <h3>Developer Tools</h3>
-            <ul class="skills-list">
-                <li>MS Power BI</li>
-                <li>MS Office Suite</li>
-                <li>MS Azure</li>
+                <li>AWS</li>
+                <li>MongoDB</li>
+                <li>Power BI</li>
                 <li>Git</li>
                 <li>Linux</li>
-                <li>Gitlab</li>
-                <li>MongoDB</li>
-                <li>AWS Cloud</li>
+                <li>Jira</li>
+                <li>Azure</li>
+                <li>Spring Boot</li>
             </ul>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section">
+        <section id="projects" class="section animate-on-scroll">
             <h2>Projects</h2>
-            <p><strong>Full-Stack Development — MERN Store Gold (E-commerce Site)</strong></p>
-            <ul>
-                <li>Utilized Redux Thunk for state management, optimizing deployment with Docker Compose and Vercel.</li>
-                <li>Improved development speed and reliability by 30% through efficient Docker and Vercel deployment strategies.</li>
-            </ul>
-            <a class="project-link" href="https://github.com/your-repo/mern-store" target="_blank">View Project on GitHub</a>
+            <div>
+                <button class="collapsible">Scalable E-commerce Site (MERN Stack)</button>
+                <div class="collapsible-content">
+                    <p>Developed a scalable e-commerce site using MERN stack with efficient backend and responsive front-end design.</p>
+                    <a href="#" class="project-link">View GitHub</a>
+                </div>
+            </div>
+            <div>
+                <button class="collapsible">Interactive Animal Welfare Project (HackWestern)</button>
+                <div class="collapsible-content">
+                    <p>Led a team to develop an interactive platform for animal welfare awareness using React and Firebase.</p>
+                    <a href="#" class="project-link">View GitHub</a>
+                </div>
+            </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section">
+        <section id="contact" class="section animate-on-scroll">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:anay.baid@uwaterloo.ca">anay.baid@uwaterloo.ca</a></p>
+            <p>Email: <a href="mailto:a2baid@uwaterloo.ca">a2baid@uwaterloo.ca</a></p>
             <p>Phone: <a href="tel:+12268998462">+1 226 899 8462</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/anaybaid" target="_blank">linkedin.com/in/anaybaid</a></p>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2025 Anay Baid. All rights reserved.</p>
+        <p>&copy; 2025 Anay Baid. All rights reserved. | <a href="#">Privacy Policy</a></p>
     </footer>
+
+    <script>
+        // Collapsible Sections
+        const coll = document.querySelectorAll(".collapsible");
+        coll.forEach((button) => {
+            button.addEventListener("click", () => {
+                const content = button.nextElementSibling;
+                content.style.display = content.style.display === "block" ? "none" : "block";
+            });
+        });
+
+        // Scroll Animation
+        const elements = document.querySelectorAll(".animate-on-scroll");
+        const scrollAnimation = () => {
+            const windowHeight = window.innerHeight;
+            elements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top <= windowHeight - 100) {
+                    el.classList.add("visible");
+                }
+            });
+        };
+        window.addEventListener("scroll", scrollAnimation);
+        scrollAnimation();  // Initial check on page load
+    </script>
 </body>
 </html>
-
