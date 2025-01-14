@@ -3,18 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Anay Baid - The Most Advanced Technical Portfolio</title>
-
-    <!-- External Libraries -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-
+    <title>Anay Baid - Portfolio</title>
     <style>
-        /* Global Styles */
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -22,292 +13,265 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #F0F0F0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
             color: #333;
             line-height: 1.6;
-            transition: background-color 0.5s ease;
         }
 
-        /* Header */
         header {
-            background-color: #222;
+            background-color: #232f3e;
             color: #fff;
-            padding: 50px 20px;
+            padding: 10px 0;
             text-align: center;
-            position: relative;
         }
 
         header h1 {
-            font-size: 70px;
+            font-size: 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #3b4a60;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
             font-weight: bold;
-            margin: 10px 0;
-            animation: fadeIn 1s ease-in-out;
+            font-size: 1.1rem;
         }
 
-        header p {
-            font-size: 18px;
-            animation: fadeIn 2s ease-in-out;
+        nav a:hover {
+            color: #ff6f61;
         }
 
-        /* Dynamic Content Section */
         .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 60px;
-            transition: padding 0.3s ease;
+            width: 80%;
+            margin: 30px auto;
         }
 
-        /* Skills Section */
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
+        .section {
+            margin-bottom: 40px;
         }
 
-        /* Project Section */
-        .projects {
-            margin-bottom: 60px;
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #232f3e;
         }
 
-        .project-card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease-in-out;
+        .experience-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .project-card:hover {
-            transform: scale(1.05);
+        .experience-item h3 {
+            font-size: 1.5rem;
+            color: #3b4a60;
         }
 
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
+        .experience-item p {
+            font-size: 1rem;
+            margin-top: 10px;
         }
 
-        .project-card h3 {
-            margin: 20px 0;
-            font-size: 24px;
-            color: #333;
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #121212;
-            color: #eaeaea;
-        }
-
-        body.dark-mode header {
-            background-color: #1c1c1c;
-        }
-
-        body.dark-mode .skills .chart {
-            background-color: #333;
-        }
-
-        /* GSAP Animations */
-        .fadeIn {
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
-
-        /* Custom Theme Toggle Button */
-        .theme-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #333;
+        .skills-list li {
+            background-color: #ff6f61;
             color: white;
-            padding: 10px 20px;
+            padding: 8px 15px;
             border-radius: 5px;
-            cursor: pointer;
+            margin: 5px;
+            font-size: 0.9rem;
         }
 
-        /* Scroll Animations */
-        .parallax {
-            background: url('https://www.example.com/your-image.jpg') no-repeat center center fixed;
-            background-size: cover;
-            height: 100vh;
-            animation: parallaxEffect 1s ease-in-out infinite alternate;
+        .skills-list li:hover {
+            background-color: #e85a47;
         }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        footer {
+            background-color: #232f3e;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
         }
 
-        @keyframes parallaxEffect {
-            0% { background-position: 0 0; }
-            100% { background-position: 0 100px; }
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .project-link {
+            display: block;
+            color: #ff6f61;
+            margin-top: 5px;
         }
     </style>
 </head>
-
 <body>
+    <header>
+        <h1>Anay Baid - Portfolio</h1>
+    </header>
+    <nav>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<header>
-    <h1>Anay Baid</h1>
-    <p>Software Engineer | Data Scientist | Tech Enthusiast | Hacker | Innovator</p>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
-</header>
+    <div class="container">
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2>Professional Experience</h2>
 
-<!-- Parallax Scrolling Section -->
-<section class="parallax"></section>
+            <div class="experience-item">
+                <h3>Data Analyst & Service Desk Intern</h3>
+                <p><strong>Nationwide Appraisal Services</strong> | <em>September 2024 - December 2024</em></p>
+                <ul>
+                    <li>Administered Windows 10/11, AWS S3, Azure, & Intune MDM for optimized device & cloud management.</li>
+                    <li>Resolved Tier 1/2 tickets via Jira & Confluence, ensuring long-term system stability through efficient RCA.</li>
+                    <li>Optimized network infrastructure (LAN/Wi-Fi) leveraging Docker, VMWare, and TCP protocols.</li>
+                    <li>Managed database operations using SQL Workbench, SonicWALL, Putty, and WinSCP for secure SSH and file transfers.</li>
+                    <li>Supported mobile app testing on Android Emulators, integrated Java 8 JDK for development & debugging.</li>
+                </ul>
+            </div>
 
-<div class="container">
+            <div class="experience-item">
+                <h3>Data Engineering Intern</h3>
+                <p><strong>Cineplex Entertainment LP</strong> | <em>January 2024 - April 2024</em></p>
+                <ul>
+                    <li>Spearheaded development of custom data cube connections for Power BI, optimizing data insights on the homepage dashboard.</li>
+                    <li>Enhanced Box Office records display via comprehensive data incident validation & tracking.</li>
+                    <li>Optimized show-time ML algorithm by 15%, improving predictions and data accuracy.</li>
+                    <li>Implemented SQL schema compare tools and Git-based version control using Python scripting for data governance.</li>
+                    <li>Validated 10TB Azure data, ensuring 100% integrity and improving automated reporting by 70% in terms of time efficiency.</li>
+                </ul>
+            </div>
 
-    <!-- Skills Section -->
-    <section class="skills">
-        <h2 class="fadeIn">💻 Technical Skills & Expertise</h2>
+            <div class="experience-item">
+                <h3>Software Administration Intern</h3>
+                <p><strong>Alterra Mountain Company</strong> | <em>June 2023 - September 2023</em></p>
+                <ul>
+                    <li>Developed property management system based on Cenium 9, improving guest record indexing by 20%.</li>
+                    <li>Utilized Power BI for monthly reports, driving a 15% revenue increase through insights.</li>
+                </ul>
+            </div>
 
-        <!-- Skills Charts -->
-        <div class="chart">
+            <div class="experience-item">
+                <h3>Android Developer Intern</h3>
+                <p><strong>Nytia Health</strong> | <em>May 2023 - June 2023</em></p>
+                <ul>
+                    <li>Integrated TensorFlow & Scikit-learn into Android watches, improving data processing efficiency by 20%.</li>
+                    <li>Developed real-time data visualization dashboards with Tableau, improving decision-making processes by 30%.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Software Developer Intern</h3>
+                <p><strong>VeDA Corporation</strong> | <em>May 2022 - August 2022</em></p>
+                <ul>
+                    <li>Reduced manual testing by 40% using Selenium-based scripts, streamlining content maintenance.</li>
+                    <li>Integrated Splunk and Docker for infrastructure monitoring, reducing downtime by 55% and increasing user capacity by 10%.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <p><strong>University of Waterloo</strong> | <em>Honours Computer Science (September 2022 - Present)</em></p>
+            <ul>
+                <li>Organized Tech+UW Mentorship Program for 150+ participants and led DEI community events.</li>
+                <li>Provided tutoring support for CS 136/136L (Algorithm Design in C), addressing technical queries and leading tutoring sessions.</li>
+            </ul>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2>Technical Skills</h2>
             <h3>Languages</h3>
-            <canvas id="languagesChart"></canvas>
-        </div>
+            <ul class="skills-list">
+                <li>C</li>
+                <li>C++</li>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>R</li>
+                <li>SQL</li>
+                <li>Kotlin</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>React</li>
+                <li>.NET</li>
+                <li>TypeScript</li>
+                <li>C#</li>
+            </ul>
 
-        <div class="chart">
-            <h3>Tools</h3>
-            <canvas id="toolsChart"></canvas>
-        </div>
-    </section>
+            <h3>Frameworks & Libraries</h3>
+            <ul class="skills-list">
+                <li>Django</li>
+                <li>Spring Boot</li>
+                <li>Node.js</li>
+                <li>Flutter</li>
+                <li>Tailwind CSS</li>
+                <li>Agile</li>
+                <li>Jira</li>
+                <li>Docker</li>
+                <li>JUnit</li>
+            </ul>
 
-    <!-- Professional Experience -->
-    <section class="experience">
-        <h2 class="fadeIn">🚀 Professional Experience</h2>
-        <div class="accordion">
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(0)">
-                    <h3>Data Engineering Intern - Cineplex</h3>
-                </div>
-                <div class="accordion-body">
-                    <ul>
-                        <li>Developed data pipelines and optimized workflows.</li>
-                        <li>Improved machine learning model performance by 15%.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(1)">
-                    <h3>Frontend Developer - Nytia Health</h3>
-                </div>
-                <div class="accordion-body">
-                    <ul>
-                        <li>Implemented responsive dashboards for real-time health monitoring.</li>
-                        <li>Integrated machine learning models for predictive analytics.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+            <h3>Developer Tools</h3>
+            <ul class="skills-list">
+                <li>MS Power BI</li>
+                <li>MS Office Suite</li>
+                <li>MS Azure</li>
+                <li>Git</li>
+                <li>Linux</li>
+                <li>Gitlab</li>
+                <li>MongoDB</li>
+                <li>AWS Cloud</li>
+            </ul>
+        </section>
 
-    <!-- Projects Section -->
-    <section class="projects">
-        <h2 class="fadeIn">🛠️ Projects & Hackathons</h2>
-        <div class="project-card" onclick="openModal('mern')">
-            <img src="https://via.placeholder.com/600x400" alt="Project">
-            <h3>MERN E-commerce Platform</h3>
-            <p>A scalable and secure e-commerce application built using the MERN stack.</p>
-        </div>
-        <div class="project-card" onclick="openModal('data')">
-            <img src="https://via.placeholder.com/600x400" alt="Project">
-            <h3>Data Analytics Dashboard</h3>
-            <p>An interactive dashboard for visualizing and analyzing large datasets.</p>
-        </div>
-    </section>
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <p><strong>Full-Stack Development — MERN Store Gold (E-commerce Site)</strong></p>
+            <ul>
+                <li>Utilized Redux Thunk for state management, optimizing deployment with Docker Compose and Vercel.</li>
+                <li>Improved development speed and reliability by 30% through efficient Docker and Vercel deployment strategies.</li>
+            </ul>
+            <a class="project-link" href="https://github.com/your-repo/mern-store" target="_blank">View Project on GitHub</a>
+        </section>
 
-</div>
-
-<!-- Modal Popup -->
-<div id="mern" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('mern')">&times;</span>
-        <h3>MERN E-commerce Platform</h3>
-        <ul>
-            <li>Developed with React, Node.js, Express, and MongoDB</li>
-            <li>Integrated Stripe for payment processing</li>
-            <li>Dockerized for easy deployment</li>
-        </ul>
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:anay.baid@uwaterloo.ca">anay.baid@uwaterloo.ca</a></p>
+            <p>Phone: <a href="tel:+12268998462">+1 226 899 8462</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/anaybaid" target="_blank">linkedin.com/in/anaybaid</a></p>
+            <p>Website: <a href="https://anay-baid-web.netlify.app" target="_blank">anay-baid-web.netlify.app</a></p>
+        </section>
     </div>
-</div>
 
-<div id="data" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('data')">&times;</span>
-        <h3>Data Analytics Dashboard</h3>
-        <ul>
-            <li>Built using Python (Flask) and React</li>
-            <li>Real-time data updates with WebSocket integration</li>
-            <li>Interactive charts with Chart.js</li>
-        </ul>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer>
-    <p>&copy; 2025 Anay Baid. All rights reserved. <a href="https://anay-baid-portfolio.netlify.app">Portfolio</a></p>
-</footer>
-
-<!-- JavaScript for Interactivity -->
-<script>
-    // Toggle Dark Mode
-    function toggleTheme() {
-        document.body.classList.toggle('dark-mode');
-        const currentTheme = document.body.classList.contains('dark-mode') ? '🌞 Light Mode' : '🌙 Dark Mode';
-        document.querySelector('.theme-toggle').textContent = currentTheme;
-    }
-
-    // Chart.js Data for Skills and Tools
-    const languagesData = {
-        labels: ['Java', 'Python', 'JavaScript', 'C++'],
-        datasets: [{
-            label: 'Languages Proficiency',
-            data: [90, 80, 85, 75],
-            backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#f6c23e'],
-        }]
-    };
-
-    const toolsData = {
-        labels: ['Git', 'Docker', 'AWS', 'Power BI'],
-        datasets: [{
-            label: 'Tools Expertise',
-            data: [85, 75, 70, 80],
-            backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56', '#cc65fe'],
-        }]
-    };
-
-    new Chart(document.getElementById('languagesChart'), {
-        type: 'pie',
-        data: languagesData,
-    });
-
-    new Chart(document.getElementById('toolsChart'), {
-        type: 'pie',
-        data: toolsData,
-    });
-
-    // Modal for Project Details
-    function openModal(projectId) {
-        document.getElementById(projectId).style.display = 'block';
-    }
-
-    function closeModal(projectId) {
-        document.getElementById(projectId).style.display = 'none';
-    }
-
-    // Accordion Functionality
-    function toggleAccordion(index) {
-        const items = document.querySelectorAll('.accordion-item');
-        items[index].classList.toggle('open');
-    }
-</script>
-
+    <footer>
+        <p>&copy; 2025 Anay Baid. All rights reserved.</p>
+    </footer>
 </body>
 </html>
