@@ -1,277 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anay Baid - Portfolio</title>
+    <meta name="author" content="Anay Baid">
+    <meta name="description" content="Professional portfolio and resume for Anay Baid, showcasing technical skills and work experience in software development, data engineering, and full-stack development.">
+    <meta name="keywords" content="Anay Baid, resume, portfolio, software development, data engineering, full-stack, Mern, React, Python, SQL, JavaScript">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Anay Baid - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* General Reset */
-        * {
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f9;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
             line-height: 1.6;
+            color: #333;
         }
 
         header {
-            background-color: #232f3e;
-            color: #fff;
+            background-color: #0c3c54;
+            color: white;
             padding: 10px 0;
             text-align: center;
         }
 
         header h1 {
-            font-size: 2rem;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #3b4a60;
-            padding: 1rem 0;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        nav a:hover {
-            color: #ff6f61;
+            margin: 0;
+            font-size: 2.5em;
         }
 
         .container {
-            width: 80%;
-            margin: 30px auto;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        .section {
+        .section-title {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            font-size: 1em;
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            font-size: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        .experience-list {
             margin-bottom: 40px;
         }
 
-        .section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #232f3e;
-        }
-
         .experience-item {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ecf0f1;
+            border-left: 5px solid #2980b9;
+            padding: 15px;
+            margin-bottom: 15px;
         }
 
         .experience-item h3 {
-            font-size: 1.5rem;
-            color: #3b4a60;
+            margin-top: 0;
+            font-size: 1.6em;
+            color: #333;
         }
 
         .experience-item p {
-            font-size: 1rem;
-            margin-top: 10px;
+            margin-top: 0;
+            font-size: 1em;
         }
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .skills-list li {
-            background-color: #ff6f61;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            margin: 5px;
-            font-size: 0.9rem;
-        }
-
-        .skills-list li:hover {
-            background-color: #e85a47;
+        .tools-used {
+            font-style: italic;
+            color: #7f8c8d;
         }
 
         footer {
-            background-color: #232f3e;
-            color: #fff;
-            padding: 15px;
+            background-color: #0c3c54;
+            color: white;
             text-align: center;
-        }
-
-        footer a {
-            color: #ff6f61;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .project-link {
-            display: block;
-            color: #ff6f61;
-            margin-top: 5px;
+            padding: 15px;
+            margin-top: 40px;
         }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>Anay Baid - Portfolio</h1>
+        <div class="container">
+            <h1>Anay Baid - Resume</h1>
+            <p>Software Developer | Data Engineer | Full-Stack Developer | Hackathon Enthusiast</p>
+        </div>
     </header>
-    <nav>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
 
     <div class="container">
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <h2>Professional Experience</h2>
+        <!-- Technical Skills Section -->
+        <section>
+            <h2 class="section-title">Technical Skills</h2>
+            <ul>
+                <li><strong>Languages:</strong> C, C++, Python, JavaScript, Java, R, SQL, Kotlin, HTML5, CSS3, React, .NET, TypeScript, C#</li>
+                <li><strong>Frameworks & Libraries:</strong> Django, Spring Boot, Node.js, Flutter, Tailwind CSS, Agile, Jira, Docker, JUnit</li>
+                <li><strong>Developer Tools:</strong> MS Power BI, MS Office Suite, MS Azure, Git, Linux, Gitlab, MongoDB, AWS Cloud</li>
+            </ul>
+        </section>
 
-            <div class="experience-item">
-                <h3>Data Analyst & Service Desk Intern</h3>
-                <p><strong>Nationwide Appraisal Services</strong> | <em>September 2024 - December 2024</em></p>
-                <ul>
-                    <li>Administered Windows 10/11, AWS S3, Azure, & Intune MDM for optimized device & cloud management.</li>
-                    <li>Resolved Tier 1/2 tickets via Jira & Confluence, ensuring long-term system stability through efficient RCA.</li>
-                    <li>Optimized network infrastructure (LAN/Wi-Fi) leveraging Docker, VMWare, and TCP protocols.</li>
-                    <li>Managed database operations using SQL Workbench, SonicWALL, Putty, and WinSCP for secure SSH and file transfers.</li>
-                    <li>Supported mobile app testing on Android Emulators, integrated Java 8 JDK for development & debugging.</li>
-                </ul>
+        <!-- Professional Experience Section -->
+        <section>
+            <h2 class="section-title">Professional Work Experience</h2>
+
+            <div class="experience-list">
+                <!-- Data Analyst & Service Desk Intern -->
+                <div class="experience-item">
+                    <h3>Data Analyst & Service Desk Intern — Nationwide Appraisal Services</h3>
+                    <p><strong>September 2024 - December 2024</strong></p>
+                    <ul>
+                        <li>Administered Windows 10/11 systems, AWS S3, Azure, and Intune MDM, ensuring optimized device and cloud management.</li>
+                        <li>Troubleshot and resolved Tier 1/2 service tickets, enhancing system uptime and stability via Root Cause Analysis (RCA).</li>
+                        <li>Optimized LAN/Wi-Fi systems and improved Layer 2/3 network protocols for seamless connectivity across departments.</li>
+                        <li>Utilized SQL Workbench, Putty, and WinSCP for secure database management, SSH operations, and file transfers.</li>
+                        <li>Supported mobile app testing for Android Emulators, integrated Java 8 JDK for development and debugging.</li>
+                    </ul>
+                    <p class="tools-used">Tools Used: SQL Workbench, Putty, WinSCP, Java 8, Intune, Docker, Azure, AWS S3</p>
+                </div>
+
+                <!-- Data Engineering Intern -->
+                <div class="experience-item">
+                    <h3>Data Engineering Intern — Cineplex Entertainment LP</h3>
+                    <p><strong>January 2024 - April 2024</strong></p>
+                    <ul>
+                        <li>Led development of custom data cube connections for Cineplex homepage dashboard in Power BI, enhancing data-driven decision-making.</li>
+                        <li>Improved show-time ML algorithm by 15% through model evaluation and data validation processes.</li>
+                        <li>Implemented SQL schema comparison tools and Git integration in Python for a data governance project.</li>
+                        <li>Validated 10TB of Azure data, ensuring 100% integrity through automated reporting systems, reducing report generation time by 70%.</li>
+                        <li>Resolved 200+ data anomalies using JUnit and Selenium, with collaborative issue resolution via Jira and Confluence.</li>
+                    </ul>
+                    <p class="tools-used">Tools Used: Power BI, SQL, Python, JUnit, Selenium, Azure, Git, Jira, Confluence</p>
+                </div>
+
+                <!-- Software Administration Intern -->
+                <div class="experience-item">
+                    <h3>Software Administration Intern — Alterra Mountain Company</h3>
+                    <p><strong>June 2023 - September 2023</strong></p>
+                    <ul>
+                        <li>Developed Cenium 9-based property management system, optimizing database indexing for 10,000+ guest records.</li>
+                        <li>Reduced check-in time by 20% and improved data retrieval speed by 30% on tapechart.</li>
+                        <li>Generated monthly business intelligence reports using Power BI, resulting in a 15% revenue increase through actionable insights.</li>
+                    </ul>
+                    <p class="tools-used">Tools Used: Power BI, Cenium 9, SQL, Database Optimization</p>
+                </div>
+
+                <!-- Android Developer Intern -->
+                <div class="experience-item">
+                    <h3>Android Developer Intern — Nytia Health</h3>
+                    <p><strong>May 2023 - June 2023</strong></p>
+                    <ul>
+                        <li>Integrated TensorFlow & Scikit-learn libraries into Android watches, enhancing data processing efficiency by 20%.</li>
+                        <li>Leveraged Python and R with Google BigQuery API to process data at 1.5 Mbps, optimizing A/B testing results with Tableau.</li>
+                        <li>Developed real-time dashboards to assist decision-making processes, improving team collaboration by 30%.</li>
+                    </ul>
+                    <p class="tools-used">Tools Used: TensorFlow, Scikit-learn, Python, R, Google BigQuery API, Tableau</p>
+                </div>
+
+                <!-- Software Developer Intern -->
+                <div class="experience-item">
+                    <h3>Software Developer Intern — VeDA Corporation</h3>
+                    <p><strong>May 2022 - August 2022</strong></p>
+                    <ul>
+                        <li>Developed Selenium-based scripts, reducing manual testing time by 40% for content maintenance.</li>
+                        <li>Integrated Splunk and Docker for real-time monitoring and performance testing with Apache JMeter.</li>
+                        <li>Resolved bottlenecks, reducing downtime by 55% and improving concurrent user capacity by 10%.</li>
+                    </ul>
+                    <p class="tools-used">Tools Used: Selenium, Splunk, Docker, Apache JMeter, Python</p>
+                </div>
             </div>
+        </section>
 
-            <div class="experience-item">
-                <h3>Data Engineering Intern</h3>
-                <p><strong>Cineplex Entertainment LP</strong> | <em>January 2024 - April 2024</em></p>
-                <ul>
-                    <li>Spearheaded development of custom data cube connections for Power BI, optimizing data insights on the homepage dashboard.</li>
-                    <li>Enhanced Box Office records display via comprehensive data incident validation & tracking.</li>
-                    <li>Optimized show-time ML algorithm by 15%, improving predictions and data accuracy.</li>
-                    <li>Implemented SQL schema compare tools and Git-based version control using Python scripting for data governance.</li>
-                    <li>Validated 10TB Azure data, ensuring 100% integrity and improving automated reporting by 70% in terms of time efficiency.</li>
-                </ul>
-            </div>
+        <!-- Hackathons & Project Experience Section -->
+        <section>
+            <h2 class="section-title">Hackathons & Project Experience</h2>
 
-            <div class="experience-item">
-                <h3>Software Administration Intern</h3>
-                <p><strong>Alterra Mountain Company</strong> | <em>June 2023 - September 2023</em></p>
-                <ul>
-                    <li>Developed property management system based on Cenium 9, improving guest record indexing by 20%.</li>
-                    <li>Utilized Power BI for monthly reports, driving a 15% revenue increase through insights.</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h3>Android Developer Intern</h3>
-                <p><strong>Nytia Health</strong> | <em>May 2023 - June 2023</em></p>
-                <ul>
-                    <li>Integrated TensorFlow & Scikit-learn into Android watches, improving data processing efficiency by 20%.</li>
-                    <li>Developed real-time data visualization dashboards with Tableau, improving decision-making processes by 30%.</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h3>Software Developer Intern</h3>
-                <p><strong>VeDA Corporation</strong> | <em>May 2022 - August 2022</em></p>
-                <ul>
-                    <li>Reduced manual testing by 40% using Selenium-based scripts, streamlining content maintenance.</li>
-                    <li>Integrated Splunk and Docker for infrastructure monitoring, reducing downtime by 55% and increasing user capacity by 10%.</li>
-                </ul>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <h3>Full-Stack Development — MERN Store Gold (E-commerce Site)</h3>
+                    <p><strong>May 2024</strong></p>
+                    <ul>
+                        <li>Utilized Redux Thunk for efficient state management and optimized deployment with Docker Compose and Vercel, increasing reliability by 30%.</li>
+                        <li>Optimized app performance and sped up development cycles by using Docker for deployment and Redux for state management.</li>
+                    </ul>
+                    <p class="tools-used">Tools Used: MERN Stack, Redux Thunk, Docker, Vercel</p>
+                </div>
             </div>
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="section">
-            <h2>Education</h2>
-            <p><strong>University of Waterloo</strong> | <em>Honours Computer Science (September 2022 - Present)</em></p>
+        <section>
+            <h2 class="section-title">Education</h2>
+            <p><strong>University of Waterloo — Honours Computer Science</strong>  
+                <br><strong>September 2022 - Present</strong></p>
             <ul>
-                <li>Organized Tech+UW Mentorship Program for 150+ participants and led DEI community events.</li>
-                <li>Provided tutoring support for CS 136/136L (Algorithm Design in C), addressing technical queries and leading tutoring sessions.</li>
+                <li>Organized and led the mentorship program for over 150 participants, coordinated 10+ events, and led 3 Diversity, Equity, and Inclusion (DEI) community events with over 500 participants.</li>
+                <li>Provided academic support for CS 136/136L (Algorithm Design in C), addressing technical queries, clarifying complex concepts, and facilitating study sessions to improve academic performance.</li>
             </ul>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <h2>Technical Skills</h2>
-            <h3>Languages</h3>
-            <ul class="skills-list">
-                <li>C</li>
-                <li>C++</li>
-                <li>Python</li>
-                <li>JavaScript</li>
-                <li>Java</li>
-                <li>R</li>
-                <li>SQL</li>
-                <li>Kotlin</li>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>React</li>
-                <li>.NET</li>
-                <li>TypeScript</li>
-                <li>C#</li>
-            </ul>
-
-            <h3>Frameworks & Libraries</h3>
-            <ul class="skills-list">
-                <li>Django</li>
-                <li>Spring Boot</li>
-                <li>Node.js</li>
-                <li>Flutter</li>
-                <li>Tailwind CSS</li>
-                <li>Agile</li>
-                <li>Jira</li>
-                <li>Docker</li>
-                <li>JUnit</li>
-            </ul>
-
-            <h3>Developer Tools</h3>
-            <ul class="skills-list">
-                <li>MS Power BI</li>
-                <li>MS Office Suite</li>
-                <li>MS Azure</li>
-                <li>Git</li>
-                <li>Linux</li>
-                <li>Gitlab</li>
-                <li>MongoDB</li>
-                <li>AWS Cloud</li>
-            </ul>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <h2>Projects</h2>
-            <p><strong>Full-Stack Development — MERN Store Gold (E-commerce Site)</strong></p>
-            <ul>
-                <li>Utilized Redux Thunk for state management, optimizing deployment with Docker Compose and Vercel.</li>
-                <li>Improved development speed and reliability by 30% through efficient Docker and Vercel deployment strategies.</li>
-            </ul>
-            <a class="project-link" href="https://github.com/your-repo/mern-store" target="_blank">View Project on GitHub</a>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:anay.baid@uwaterloo.ca">anay.baid@uwaterloo.ca</a></p>
-            <p>Phone: <a href="tel:+12268998462">+1 226 899 8462</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/anaybaid" target="_blank">linkedin.com/in/anaybaid</a></p>
-            <p>Website: <a href="https://anay-baid-web.netlify.app" target="_blank">anay-baid-web.netlify.app</a></p>
-        </section>
     </div>
 
     <footer>
         <p>&copy; 2025 Anay Baid. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
